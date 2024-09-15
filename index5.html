@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <title>Document</title>
+  </head>
+  <body>
+   <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-4">
+        <div class="shadow-sm p-5 rounded rounded-3"><h1 id="twcontainer"></h1></div>
+        
+      </div>
+    </div>
+   </div>
+    <script>
+      const twcontainer=document.getElementById('twcontainer')
+      const slogan='Type Writer';
+      let timer;
+      let i=0
+      function startTypeWriter(){
+        timer=setInterval(TypeWriter,300)
+      }
+      function TypeWriter(){
+        twcontainer.innerHTML = slogan.substring(0,i)
+        if (i >= slogan.length) {
+          clearInterval(timer);
+        }
+        i++
+        // console.log(i)
+
+      }
+      startTypeWriter()
+
+    </script>
+  </body>
+</html>
